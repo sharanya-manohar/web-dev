@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import VerticalNavbar from './components/verticalnavbar';
 import SearchComponent from './components/SearchComponent';
 import ShowCourseComponent from './components/ShowCourseComponent';
 import UserCartComponent from './components/UserCartComponent';
@@ -7,34 +8,34 @@ import UserCartComponent from './components/UserCartComponent';
 function App() {
     const [courses, setCourses] = useState([
         { id: 1, 
-          name: 'iPhone 15 pro max', 
-          price: 149999, 
+          name: 'Chicken Pizza', 
+          price: 500, 
           image: 
-'https://m.media-amazon.com/images/I/81Os1SDWpcL._SX522_.jpg'
+'https://tasty.recipes/wp-content/uploads/2017/11/Chicken-Parm-Pizza-2000x2000.jpg'
         },
         { id: 2, 
-          name: 'Samsung Galaxy s24 ultra', 
-          price: 139999, 
+          name: 'Chicken Soup', 
+          price: 200, 
           image: 
-'https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/b/b/9/-original-imagx9egaxqpja77.jpeg?q=70&crop=false'
+'http://images.media-allrecipes.com/userphotos/960x960/3759155.jpg'
         },
         { id: 3, 
-          name: 'Google pixel 8 pro', 
-          price: 60999, 
+          name: 'Chicken Salad', 
+          price: 200, 
           image: 
-'https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/z/g/q/-original-imaggsueh4b26fj7.jpeg?q=70&crop=false'
+'https://life-in-the-lofthouse.com/wp-content/uploads/2015/05/BBQ_Chicken_Salad.jpg'
         },
         { id: 4, 
-            name: 'OnePlus 10 pro', 
-            price: 66999, 
+            name: 'Chicken BBQ', 
+            price: 750, 
             image: 
-'https://m.media-amazon.com/images/I/418rmVFVCAL._SX300_SY300_QL70_FMwebp_.jpg'
+'http://www.simplesweetsavory.com/wp-content/uploads/2015/04/Easy-Grilled-BBQ-Chicken.jpg'
         },
         { id: 5, 
-            name: 'Motorola razr 40 Ultra', 
-            price: 69999, 
+            name: 'Chicken Burger', 
+            price: 250, 
             image: 
-'https://m.media-amazon.com/images/I/41dUJO4sQyL._SX300_SY300_QL70_FMwebp_.jpg'
+'https://www.nrn.com/sites/nrn.com/files/traditional_chicken_burger_R_0.jpg'
         }
     ]);
 
@@ -78,9 +79,13 @@ function App() {
  
     return (
         <div className="App">
+          
             <SearchComponent searchCourse={searchCourse} 
                              courseSearchUserFunction=
                                  {courseSearchUserFunction} />
+              <VerticalNavbar>
+                <div className='bgimg-1'></div>
+              </VerticalNavbar>
             <main className="App-main">
                 <ShowCourseComponent
                     courses={courses}
@@ -97,6 +102,7 @@ function App() {
                     setCartCourses={setCartCourses}
                 />
             </main>
+
         </div>
     );
 }
